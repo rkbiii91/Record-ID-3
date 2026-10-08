@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Record ID</title>
+<link rel="manifest" href="manifest.json" />
+<meta name="theme-color" content="#1a1a1a" />
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>Record ID</h1>
+  </header>
+
+  <main>
+    <div id="error-banner" class="banner" hidden></div>
+
+    <section id="capture-section" class="card">
+      <label for="photo-input" class="capture-btn">
+        📷 Take / Choose Photo
+      </label>
+      <input type="file" id="photo-input" accept="image/*" capture="environment" hidden />
+      <img id="preview" alt="Preview" hidden />
+      <div id="status" class="status" hidden></div>
+    </section>
+
+    <section id="detail-section" class="card" hidden>
+      <h2 id="detail-artist"></h2>
+
+      <div id="sides"></div>
+
+      <table class="info-table">
+        <tr><td>Label</td><td id="detail-label"></td></tr>
+        <tr><td>Year</td><td id="detail-year"></td></tr>
+        <tr><td>Catalog #</td><td id="detail-catno"></td></tr>
+      </table>
+
+      <span class="section-label">Stats</span>
+      <table class="info-table">
+        <tr><td>Have</td><td><a id="detail-have" target="_blank" rel="noopener"></a></td></tr>
+        <tr><td>Want</td><td><a id="detail-want" target="_blank" rel="noopener"></a></td></tr>
+        <tr><td>Avg Rating</td><td id="detail-rating"></td></tr>
+        <tr><td>Ratings</td><td><a id="detail-rating-count" target="_blank" rel="noopener"></a></td></tr>
+      </table>
+
+      <span class="section-label">Marketplace</span>
+      <table class="info-table">
+        <tr><td>Lowest price listed</td><td id="detail-price"></td></tr>
+        <tr><td>How many for sale</td><td id="detail-forsale"></td></tr>
+      </table>
+      <p><a id="detail-marketplace-link" target="_blank" rel="noopener">View on Discogs Marketplace →</a></p>
+      <p><a id="detail-sellhistory-link" target="_blank" rel="noopener">View Last Sold / Low / Median / High on Discogs →</a></p>
+
+      <span class="section-label">Price Suggestions by Condition</span>
+      <p class="hint">Discogs' own suggested value per grade — not historical sold prices.</p>
+      <table class="info-table" id="price-suggestions-table"></table>
+
+      <span class="section-label">Videos</span>
+      <div id="videos"></div>
+
+      <button id="scan-another-btn" class="secondary">Scan Another Record</button>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
